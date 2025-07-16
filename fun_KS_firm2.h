@@ -694,6 +694,15 @@ Effective output of firm in consumption-good sector
 */
 RESULT( min( V( "_Q2" ), SUM( "__Qvint" ) ) )
 
+EQUATION( "_emissions_c" )
+/*
+Carbon emissions produced by firm in consumption-good sector
+*/
+
+v[0] = V( "_Q2e" ) * V( "_EBtau" );
+
+RESULT ( v[0] )
+
 
 EQUATION( "_Q2p" )
 /*
