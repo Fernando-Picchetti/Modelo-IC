@@ -18,7 +18,7 @@
 EQUATION( "_Atau" )
 /*
 Labor productivity of new vintage of machine when employed for production
-Also updates '_Btau'
+Also updates '_Btau', '_EAtau' and '_EBtau'
 */
 
 double Ainn, Binn, Aimi, Bimi, cImi, cInn, pImi, pInn, EAinn, EBinn, EAimi, EBimi;
@@ -154,7 +154,7 @@ if ( pImi / m2 + cImi * b < pTau / m2 + cTau * b )
 }
 
 WRITE( "_Btau", Btau );
-WRITE( "_EAtau", Atau );
+WRITE( "_EAtau", EAtau );
 WRITE( "_EBtau", EBtau);
 WRITE( "_inn", v[6] );
 WRITE( "_imi", v[7] );
@@ -474,6 +474,15 @@ CYCLE( cur, "Cli" )
 	}
 
 RESULT( max( v[0], 0 ) )						// avoid negative in part. cases
+
+EQUATION("_emissions_k")
+/*
+Carbon emissions produced by firm in capital-good sector 
+*/
+
+v[0] = V( "_Q1e" ) * V( "EAtau" )
+
+RESULT ( v[0] )
 
 
 EQUATION( "_S1" )
