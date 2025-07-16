@@ -377,6 +377,13 @@ Total effective output of firms in consumption-good sector
 RESULT( SUM( "_Q2e" ) )
 
 
+EQUATION( "emissions_c" )
+/*
+Aggregate emissions of firms in consumption-good sector
+*/
+RESULT( SUM( "_emissions_c" ) )
+
+
 EQUATION( "Q2p" )
 /*
 Potential production with current machines in consumption-good sector
