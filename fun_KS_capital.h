@@ -239,6 +239,11 @@ Total effective real output (orders) of capital-good sector
 */
 RESULT( SUM( "_Q1e" ) )
 
+EQUATION("emissions_k")
+/*Aggregate emissions in capital sector
+*/
+RESULT( SUM( "_emissions_k") )
+
 
 EQUATION( "S1" )
 /*
@@ -351,4 +356,3 @@ EQUATION_DUMMY( "cExit1", "" )
 Credits (returned equity) from firm exits in capital-good sector
 Updated in 'entry1exit'
 */
-
