@@ -8,7 +8,7 @@
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the Country objects in the K+S LSD model
+	Equations that are specific to the Country objects in the model
 	are coded below. Also the general country-level initialization is
 	defined below.
 
