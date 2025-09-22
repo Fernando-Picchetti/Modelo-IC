@@ -8,7 +8,7 @@
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	C++ class and preprocessor macro definitions used in the K+S LSD model
+	C++ class and preprocessor macro definitions used in the model
 	are coded below.
 
  ******************************************************************************/
