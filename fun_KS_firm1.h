@@ -4,11 +4,12 @@
 	----------------------
 
 	Written by Marcelo C. Pereira, University of Campinas
+	Adapted by Fernando Picchetti, University of São Paulo
 
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the Firm1 objects in the K+S LSD model
+	Equations that are specific to the Firm1 objects in the model
 	are coded below.
 
  ******************************************************************************/
@@ -480,7 +481,7 @@ EQUATION("_emissions_k")
 Carbon emissions produced by firm in capital-good sector 
 */
 
-v[0] = V( "_Q1e" ) * V( "EAtau" )
+v[0] = V( "_Q1e" ) * V( "_EAtau" )
 
 RESULT ( v[0] )
 
@@ -556,6 +557,19 @@ Labor productivity of new vintage of machine when employed for production
 Updated in '_Atau'
 */
 
+EQUATION_DUMMY( "_EAtau", "" )
+/*
+Emissions of new vintage of machine when employed for production of capital goods
+Updated in '_Atau'
+*/
+
+EQUATION_DUMMY( "_EBtau", "" )
+/*
+Emissions of new vintage of machine when employed for production of consumer goods
+Updated in '_Atau'
+*/
+
+
 EQUATION_DUMMY( "_CD1", "" )
 /*
 Credit demand for firm in capital-good sector
@@ -602,4 +616,3 @@ EQUATION_DUMMY( "_inn", "" )
 /*
 Innovation success (1) or failure (0) for firm in capital-good sector
 Updated in '_Atau'
-*/
