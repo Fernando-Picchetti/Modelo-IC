@@ -8,8 +8,8 @@
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the financial market object in the K+S
-	LSD model are coded below.
+	Equations that are specific to the financial market object in the
+	model are coded below.
 
  ******************************************************************************/
 
