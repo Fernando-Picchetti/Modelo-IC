@@ -8,7 +8,7 @@
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Pure C support functions used in the objects in the K+S LSD model are
+	Pure C support functions used in the objects in the model are
 	coded below.
 
  ******************************************************************************/
