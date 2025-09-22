@@ -3,13 +3,14 @@
 	CAPITAL-GOODS MARKET OBJECT EQUATIONS
 	-------------------------------------
 
-	Written by Marcelo C. Pereira, University of Campinas
+	Written by Marcelo C. Pereira, University of Campinas. 
+	Adapted by Fernando Picchetti, Univeristy of São Paulo
 
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
 	Equations that are specific to the capital-goods market objects in the
-	K+S LSD model are coded below.
+	model are coded below.
 
  ******************************************************************************/
 
@@ -144,6 +145,12 @@ Labor productivity of capital-good sector
 V( "PPI" );										// ensure m.s. are updated
 RESULT( WHTAVE( "_Btau", "_f1" ) )
 
+EQUATION( "E1" )
+/*
+Emission coefficient of capital-good sector (weighted average)
+*/
+V( "PPI" );										// ensure m.s. are updated
+RESULT( WHTAVE( "_EAtau", "_f1" ) )
 
 EQUATION( "D1" )
 /*
@@ -306,6 +313,12 @@ EQUATION( "p1avg" )
 Average price charged in capital-good sector
 */
 RESULT( AVE( "_p1" ) )
+
+EQUATION( "emissions_k_avg" )
+/*
+Average emission in capital-good sector
+*/
+RESULT( AVE( "_emissions_k" ) )
 
 
 /*========================== SUPPORT LSD FUNCTIONS ===========================*/
