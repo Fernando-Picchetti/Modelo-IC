@@ -4,11 +4,12 @@
 	------------------------
 
 	Written by Marcelo C. Pereira, University of Campinas
+	Adapted by Fernando Picchetti, University of São Paulo
 
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the Vint objects in the K+S LSD model
+	Equations that are specific to the Vint objects in the model
 	are coded below.
 
  ******************************************************************************/
@@ -58,6 +59,11 @@ It is capped by the machines physical capacity
 VS( PARENT, "_alloc2" );						// ensure allocation is done
 RESULT( V( "__Avint" ) * V( "__Lvint" ) )
 
+EQUATION( "__Evint" )
+/*
+Vintage polution
+*/
+RESULT( V( "__Qvint" ) * V("__EAvint" ) )
 
 /*============================= DUMMY EQUATIONS ==============================*/
 
