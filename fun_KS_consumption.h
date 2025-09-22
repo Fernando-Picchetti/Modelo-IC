@@ -4,12 +4,13 @@
 	--------------------------------------
 
 	Written by Marcelo C. Pereira, University of Campinas
+	Adapted by Fernando Picchetti, University of São Paulo
 
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
 	Equations that are specific to the consumer-goods market objects in the
-	K+S LSD model are coded below.
+	model are coded below.
 
  ******************************************************************************/
 
@@ -500,6 +501,13 @@ Average price charged in consumption-good sector
 */
 v[1] = SUM( "_life2cycle" );
 RESULT( v[1] > 0 ? WHTAVE( "_p2", "_life2cycle" ) / v[1] : CURRENT )
+
+EQUATION( "emissions_c_avg" )
+/*
+Average emission in consumer-good sector
+*/
+RESULT( AVE( "_emissions_c" ) )
+
 
 
 /*========================== SUPPORT LSD FUNCTIONS ===========================*/
