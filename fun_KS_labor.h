@@ -8,7 +8,7 @@
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the Labor Market objects in the K+S LSD
+	Equations that are specific to the Labor Market objects in the
 	model are coded below.
 
  ******************************************************************************/
