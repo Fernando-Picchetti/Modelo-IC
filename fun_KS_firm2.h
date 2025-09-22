@@ -4,11 +4,12 @@
 	----------------------
 
 	Written by Marcelo C. Pereira, University of Campinas
+	Adapted by Fernando Picchetti, University of São Paulo
 
 	Copyright Marcelo C. Pereira
 	Distributed under the GNU General Public License
 
-	Equations that are specific to the Firm2 objects in the K+S LSD model
+	Equations that are specific to the Firm2 objects in the model
 	are coded below.
 
  ******************************************************************************/
@@ -123,8 +124,13 @@ if ( V( "_life2cycle" ) == 0 )
 
 v[1] = VLS( PARENT, "l2avg", 1 ) + 1;
 
+if ( V( "_emissions_c" ) > 0 ) {
+    v[2] = VS( PARENT, "omega3" ) * V( "_emissions_c" ) / VS( PARENT, "emissions_c_avg" );
+}
+
 RESULT( - VS( PARENT, "omega1" ) * V( "_p2" ) / VS( PARENT, "p2avg" ) -
-		VS( PARENT, "omega2" ) * ( v[1] > 1 ? ( VL( "_l2", 1 ) + 1 ) / v[1] : 1 ) )
+		VS( PARENT, "omega2" ) * ( v[1] > 1 ? ( VL( "_l2", 1 ) + 1 ) / v[1] : 1 ) -
+		v[2] )
 
 
 EQUATION( "_EI" )
@@ -699,9 +705,7 @@ EQUATION( "_emissions_c" )
 Carbon emissions produced by firm in consumption-good sector
 */
 
-v[0] = V( "_Q2e" ) * V( "_EBtau" );
-
-RESULT ( v[0] )
+RESULT ( SUM( "__Evint" ) )
 
 
 EQUATION( "_Q2p" )
